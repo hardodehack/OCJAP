@@ -1,0 +1,137 @@
+"C:\Program Files\Java\jdk1.8.0_91\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\lib\idea_rt.jar=51075:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;D:\Hardik\Hardik\HDK_WorkSpace\HDK_Labs\Intellij_Workspace\OCJAP\out\production\OCJAP" Threads.DeadLock.BlockingResource
+Trying to Hold lock for Object o1 Outside......Thread__1
+Holding lock for Object o1 Outside........Thread__1
+Trying to Hold lock for Object o2 Outside......Thread__2
+Holding lock for Object o2 Outside........Thread__2
+Trying to Hold lock for Object o2 from Inside Locked o1......Thread__1
+Trying to Hold lock for Object o1 from Inside Locked o2......Thread__2
+2017-12-17 11:45:14
+
+Below is the Thread Dump for DeadLock Program... Just Search for BLOCKED. If you don't have much knowledge about ThreadDump, then do R/D and come back here... Thanks.
+*****************************************************************************************************************************************
+
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.91-b15 mixed mode):
+
+"DestroyJavaVM" #13 prio=5 os_prio=0 tid=0x00000000020f8000 nid=0x2e1c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread__2" #12 prio=5 os_prio=0 tid=0x00000000593a5000 nid=0x2870 waiting for monitor entry [0x000000005a12f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at Threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
+	- waiting to lock <0x00000000d712da50> (a java.lang.Object)
+	- locked <0x00000000d712da60> (a java.lang.Object)
+	at Threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Thread__1" #11 prio=5 os_prio=0 tid=0x00000000593a4800 nid=0x231c waiting for monitor entry [0x000000005a27f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at Threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
+	- waiting to lock <0x00000000d712da60> (a java.lang.Object)
+	- locked <0x00000000d712da50> (a java.lang.Object)
+	at Threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+
+"Service Thread" #10 daemon prio=9 os_prio=0 tid=0x0000000059128800 nid=0x2070 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #9 daemon prio=9 os_prio=2 tid=0x00000000590a1000 nid=0x2d68 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #8 daemon prio=9 os_prio=2 tid=0x00000000590ac800 nid=0x294c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #7 daemon prio=9 os_prio=2 tid=0x00000000590ab800 nid=0x2cc4 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Ctrl-Break" #6 daemon prio=5 os_prio=0 tid=0x0000000059099800 nid=0x448 runnable [0x000000005991e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	- locked <0x00000000d717d4d0> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	- locked <0x00000000d717d4d0> (a java.io.InputStreamReader)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:64)
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000000057326800 nid=0x2d80 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000000057325800 nid=0x23a0 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x000000005730f000 nid=0x1990 in Object.wait() [0x000000005905f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d7008ee0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000d7008ee0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x00000000572c6000 nid=0x2ef0 in Object.wait() [0x0000000058e4f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000000d7006b50> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x00000000d7006b50> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"VM Thread" os_prio=2 tid=0x00000000572c0800 nid=0x24dc runnable
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x000000000210d800 nid=0x11f8 runnable
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x000000000210f000 nid=0x2b94 runnable
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000000002110800 nid=0x1214 runnable
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000000002112000 nid=0x22cc runnable
+
+"VM Periodic Task Thread" os_prio=2 tid=0x0000000059163800 nid=0x1ac4 waiting on condition
+
+JNI global references: 336
+
+
+Found one Java-level deadlock:
+=============================
+"Thread__2":
+  waiting to lock monitor 0x00000000572cc4a8 (object 0x00000000d712da50, a java.lang.Object),
+  which is held by "Thread__1"
+"Thread__1":
+  waiting to lock monitor 0x00000000572c9c18 (object 0x00000000d712da60, a java.lang.Object),
+  which is held by "Thread__2"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread__2":
+	at Threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
+	- waiting to lock <0x00000000d712da50> (a java.lang.Object)
+	- locked <0x00000000d712da60> (a java.lang.Object)
+	at Threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+"Thread__1":
+	at Threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
+	- waiting to lock <0x00000000d712da60> (a java.lang.Object)
+	- locked <0x00000000d712da50> (a java.lang.Object)
+	at Threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:745)
+
+Found 1 deadlock.
+
+Heap
+ PSYoungGen      total 36864K, used 7031K [0x00000000d7000000, 0x00000000d9900000, 0x0000000100000000)
+  eden space 31744K, 22% used [0x00000000d7000000,0x00000000d76dde30,0x00000000d8f00000)
+  from space 5120K, 0% used [0x00000000d9400000,0x00000000d9400000,0x00000000d9900000)
+  to   space 5120K, 0% used [0x00000000d8f00000,0x00000000d8f00000,0x00000000d9400000)
+ ParOldGen       total 84992K, used 0K [0x0000000085000000, 0x000000008a300000, 0x00000000d7000000)
+  object space 84992K, 0% used [0x0000000085000000,0x0000000085000000,0x000000008a300000)
+ Metaspace       used 4108K, capacity 4692K, committed 4864K, reserved 1056768K
+  class space    used 461K, capacity 500K, committed 512K, reserved 1048576K
+
