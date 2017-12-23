@@ -1,4 +1,4 @@
-package Collection;
+package collection;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -9,11 +9,14 @@ public class Cobrands implements Comparable<Cobrands>{
     private String appId;
     private ArrayList<Components> components;
 
+    public Cobrands(){
+
+    }
+
     public Cobrands(int cobId, String appId) {
         this.cobId = cobId;
         this.appId = appId;
     }
-
 
 
     public int getCobId() {
@@ -63,6 +66,13 @@ public class Cobrands implements Comparable<Cobrands>{
         return Objects.hash(cobId, appId, components);
     }
 
+    @Override
+    public String toString() {
+        return "Cobrands{" +
+                "cobId=" + cobId +
+                ", appId='" + appId + '\'' +
+                '}';
+    }
 
 
 }

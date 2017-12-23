@@ -1,6 +1,6 @@
-package Collection.List;
+package collection.List;
 
-import Collection.Cobrands;
+import collection.Cobrands;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

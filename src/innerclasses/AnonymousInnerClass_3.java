@@ -1,4 +1,4 @@
-package InnerClasses;
+package innerclasses;
 
 interface ForAnnonInterface{
     void fromInterfaceAnno();

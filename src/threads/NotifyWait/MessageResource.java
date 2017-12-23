@@ -1,4 +1,4 @@
-package Threads.NotifyWait;
+package threads.NotifyWait;
 
 public class MessageResource {
 

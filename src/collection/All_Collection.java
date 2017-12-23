@@ -1,4 +1,4 @@
-package Collection;
+package collection;
 
 public class All_Collection {
 
@@ -8,10 +8,10 @@ public class All_Collection {
         ArrayList       I
         Vector
             Stack
-        LinkedList_HDK
+        MethodsInCollectionsInterface
 
     Queue
-        LinkedList_HDK
+        MethodsInCollectionsInterface
         SortedQueue
            Navigable
               PriorityQueue

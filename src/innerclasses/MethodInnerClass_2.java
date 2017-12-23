@@ -1,4 +1,4 @@
-package InnerClasses;
+package innerclasses;
 
 public class MethodInnerClass_2 {
 

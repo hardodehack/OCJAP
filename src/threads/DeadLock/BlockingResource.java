@@ -1,4 +1,4 @@
-package Threads.DeadLock;
+package threads.DeadLock;
 
 public class BlockingResource {
 

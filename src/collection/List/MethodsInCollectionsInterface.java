@@ -1,12 +1,10 @@
-package Collection.List;
+package collection.List;
 
-import Collection.Cobrands;
+import collection.Cobrands;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.*;
 
-public class LinkedList_HDK {
+public class MethodsInCollectionsInterface {
 
     public static void main(String[] args) {
 
@@ -18,8 +16,35 @@ public class LinkedList_HDK {
         ll.add(new Cobrands(5,"TBSDHFJD788"));
         ll.add(new Cobrands(0,"JBSDHFJD788"));
         ll.add(new Cobrands(2,"OBSDHFJD788"));
-        ll.add(new Cobrands(7,"ZBSDHFJD788"));
+        Cobrands cs = new Cobrands(7,"ZBSDHFJD788");
+        ll.add(cs);
 
+        /*
+            Here sort, binarySearch, shuffle methods will work for only collection types of List.
+                HashMap<String,String> hMap = new HashMap<>();
+                hMap.put("Pappu","TaTa");
+        */
+
+        // The Frequency method to count number of occur, supported for all kind of collection.
+        System.out.println(Collections.frequency(ll,cs));
+
+        System.out.println(Collections.disjoint(ll,new ArrayList<>()));
+
+        // The Shuffle Method of Collections Class.
+        Collections.shuffle(ll, new Random());
+
+        // Use of binarySearch method present Collections Class
+        System.out.println(Collections.binarySearch(ll,cs)+" "+ll.get(5));
+
+        // Min and Max comes with two variants, 1 is with Comparator and 2. Without Comparator(Direct collection.)
+        Collections.min(ll);
+
+        Collections.max(ll);
+
+
+
+
+        System.exit(0);
 
         System.out.println("Using Enhanced For Loop");
         for(Cobrands c : ll){

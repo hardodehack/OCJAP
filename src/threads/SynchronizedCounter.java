@@ -1,6 +1,4 @@
-package Threads;
-
-import java.util.concurrent.atomic.AtomicInteger;
+package threads;
 
 public class SynchronizedCounter {
 

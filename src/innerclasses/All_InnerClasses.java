@@ -1,10 +1,10 @@
-package InnerClasses;
+package innerclasses;
 
 public class All_InnerClasses {
 
     /*
 
-    InnerClasses
+    innerclasses
 
         1. Local InnerClass
             It can be

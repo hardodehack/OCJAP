@@ -1,4 +1,4 @@
-"C:\Program Files\Java\jdk1.8.0_91\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\lib\idea_rt.jar=51075:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;D:\Hardik\Hardik\HDK_WorkSpace\HDK_Labs\Intellij_Workspace\OCJAP\out\production\OCJAP" Threads.DeadLock.BlockingResource
+"C:\Program Files\Java\jdk1.8.0_91\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\lib\idea_rt.jar=51075:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.3\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;D:\Hardik\Hardik\HDK_WorkSpace\HDK_Labs\Intellij_Workspace\OCJAP\out\production\OCJAP" threads.DeadLock.BlockingResource
 Trying to Hold lock for Object o1 Outside......Thread__1
 Holding lock for Object o1 Outside........Thread__1
 Trying to Hold lock for Object o2 Outside......Thread__2
@@ -17,18 +17,18 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.91-b15 mixed mode):
 
 "Thread__2" #12 prio=5 os_prio=0 tid=0x00000000593a5000 nid=0x2870 waiting for monitor entry [0x000000005a12f000]
    java.lang.Thread.State: BLOCKED (on object monitor)
-	at Threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
+	at threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
 	- waiting to lock <0x00000000d712da50> (a java.lang.Object)
 	- locked <0x00000000d712da60> (a java.lang.Object)
-	at Threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
+	at threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:745)
 
 "Thread__1" #11 prio=5 os_prio=0 tid=0x00000000593a4800 nid=0x231c waiting for monitor entry [0x000000005a27f000]
    java.lang.Thread.State: BLOCKED (on object monitor)
-	at Threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
+	at threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
 	- waiting to lock <0x00000000d712da60> (a java.lang.Object)
 	- locked <0x00000000d712da50> (a java.lang.Object)
-	at Threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
+	at threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:745)
 
 "Service Thread" #10 daemon prio=9 os_prio=0 tid=0x0000000059128800 nid=0x2070 runnable [0x0000000000000000]
@@ -111,16 +111,16 @@ Found one Java-level deadlock:
 Java stack information for the threads listed above:
 ===================================================
 "Thread__2":
-	at Threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
+	at threads.DeadLock.BlockingResource.lambda$new$1(BlockingResource.java:49)
 	- waiting to lock <0x00000000d712da50> (a java.lang.Object)
 	- locked <0x00000000d712da60> (a java.lang.Object)
-	at Threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
+	at threads.DeadLock.BlockingResource$$Lambda$2/990368553.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:745)
 "Thread__1":
-	at Threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
+	at threads.DeadLock.BlockingResource.lambda$new$0(BlockingResource.java:22)
 	- waiting to lock <0x00000000d712da60> (a java.lang.Object)
 	- locked <0x00000000d712da50> (a java.lang.Object)
-	at Threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
+	at threads.DeadLock.BlockingResource$$Lambda$1/2003749087.run(Unknown Source)
 	at java.lang.Thread.run(Thread.java:745)
 
 Found 1 deadlock.
